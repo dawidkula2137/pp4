@@ -1,0 +1,270 @@
+* {
+    text-decoration: none;
+}
+
+main {
+    padding-top: 100px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    height: 100px;
+}
+
+header .header-brand {
+    font-family: Catamaran, sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: #111;
+    text-transform: uppercase;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header nav ul {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+header nav ul li {
+    display: inline-block;
+    float: left;
+    list-style: none;
+    padding: 0 16px;
+}
+
+header nav ul li a{
+    font-family: Catamaran, sans-serif;
+    font-size: 16px;
+    color: #111;
+    text-transform: uppercase;
+}
+
+header .header-newest {
+    display: none;
+}
+
+@media only screen and (min-width: 1000px) {
+    header .header-brand {
+        margin: 31px 0;
+        text-align: left;
+        line-height: 30px;
+        padding: 0 20px 0 40px;
+        border-right: 3px solid #111;
+        float: left;
+    }
+    header nav ul {
+        margin: 17px 0 0 20px;
+        float: left;
+    }
+
+    header nav ul li a{
+        line-height: 60px;
+    }
+    header .header-newest {
+        display: block;
+        font-family: Catamaran, sans-serif;
+        font-size: 16px;
+        color: #111;
+        text-transform: uppercase;
+        line-height: 38px;
+        border: 1px solid #111;
+        float: right;
+        margin-right: 40px;
+        margin-top: 31px;
+        padding: 0 20px;
+    }
+}
+
+/*INDEX*/
+
+.index-banner {
+    height: calc(100vh - 600px);
+    background-image: url('img/banneralt.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    display: table;
+}
+
+.vertical-center {
+    display: block;
+    vertical-align: center;
+}
+
+.index-banner h2 {
+    font-family: Catamaran, sans-serif;
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 70px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 8px #111;
+}
+
+/*.index-banner h1 {
+    font-family: Garamond, sans-serif;
+    font-size: 28px;
+    font-weight: 100;
+    font-style: italic;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 1px 1px 1px #111;
+}*/
+
+.index-boxes div {
+    margin: 16px 16px 0;
+    width: calc(100% - 32px);
+    height: 100px;
+    background-color: #f2f2f2;
+}
+
+.index-boxes div h3 {
+    font-family: Catamaran, sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 100px;
+    color: #111;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@media only screen and (min-width: 1000px) {
+    .wrapper {
+        width: 1000px;
+        margin: 0 auto;
+    }
+
+    .index-banner {
+        width: 100%;
+        height: 350px;
+    }
+
+    .index-banner h1 {
+        display: block;
+        width: 580px;
+        margin: 0 auto;
+    }
+
+    .index-boxes {
+        overflow: hidden;
+    }
+
+    .index-boxes div {
+        margin: 20px 10px 0;
+        height: 230px;
+        background-color: #f2f2f2;
+        float: left;
+    }
+
+    .index-box-square {
+         width: calc(25% - 20px) !important;
+     }
+
+    .index-box-rectangle {
+        width: calc(50% - 20px) !important;
+    }
+
+    .index-boxes div h3 {
+        line-height: 185px;
+    }
+}
+/*POSTS*/
+
+.posts-links {
+    overflow: hidden;
+    margin-bottom: 20px;
+    }
+
+.posts-links h2 {
+    font-family: Catamaran, sans-serif;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    color: #111;
+    text-transform: uppercase;
+}
+
+.posts-links .posts-link  {
+    float: left;
+    width: 230px;
+    height: 230px;
+    margin: 20px 10px 0;
+    background-color: #e3e3e3;
+}
+
+
+.posts-links .posts-link p {
+    padding-top: 45%;
+    line-height: 0;
+    font-family: Catamaran, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #111;
+    text-align:  center;
+    text-transform: uppercase;
+}
+
+
+/*FOOTER*/
+
+footer {
+    width: calc(100% - 80px);
+    padding: 40px 40px;
+    margin-top: 20px;
+    background-color: #222222;
+    overflow: hidden;
+}
+
+footer ul {
+    width: fit-content;
+    float: left;
+    padding-left: 20px;
+}
+
+footer ul li {
+    display: block;
+    list-style: none;
+}
+
+footer ul li a {
+    font-family: Catamaran, sans-serif;
+    font-size: 16px;
+    color: #fff;
+    line-height: 40px;
+}
+
+.footer-links-newest {
+    display: none;
+}
+
+@media only screen and (min-width: 1000px) {
+
+    .footer-links-newest {
+        display: block;
+    }
+
+    footer ul {
+        padding-right: 30px;
+    }
+
+    footer ul li p {
+        font-family: Catamaran, sans-serif;
+        font-size: 24px;
+        color: #fff;
+        line-height: 0;
+        padding-inline: 250px;
+        text-transform: uppercase;
+    }
+}
+
+
