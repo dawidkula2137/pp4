@@ -14,7 +14,7 @@
     <nav>
         <ul>
             <li><a href="Trending.html">Trending</a></li>
-            <li><a href="Newest.php">Newest</a></li>
+            <li><a href="Books.php">Newest</a></li>
             <li><a href="Search.html">Search</a></li>
             <li><a href="aboutUs.html">About us</a></li>
         </ul>
@@ -26,36 +26,35 @@
     <div class="wrapper">
         <form action="dbBookAdd.php" method="post">
             <div>
-            <label>
-                <input name="title" type="text" placeholder="tytuł">
-            </label>
-            <label>
-                 <input name="author" type="text" placeholder="autor">
-            </label>
-            <label>
-                <select name="genre">
+                <label>
+                    <input name="title" type="text" placeholder="tytuł">
+                </label>
+                <label>
+                    <input name="author" type="text" placeholder="autor">
+                </label>
+                <label>
+                    <select name="genre">
 
-                    <?php
+                        <?php
 
-                    require('./connect.php');
+                        require('./connect.php');
 
-                    $sql = "SELECT nazwa FROM gatunki";
-                    $result = $con->query($sql);
+                        $sql = "SELECT nazwa FROM gatunki";
+                        $result = $con->query($sql);
 
-                    while($row = mysqli_fetch_array($result)){
-                        $wynik = $row['nazwa'];
-                        echo "<option value='$wynik'>".$row['nazwa']."</option>";
-                    }
+                        while ($row = mysqli_fetch_array($result)) {
+                            echo "<option value='{$row['nazwa']}'>" . $row['nazwa'] . "</option>";
+                        }
 
-                    ?>
-                </select>
-            </label>
-            <label>
-                <input type="submit" value="Add">
-            </label>
-            <label>
-                <input type="reset" value="Clear all">
-            </label>
+                        ?>
+                    </select>
+                </label>
+                <label>
+                    <input type="submit" value="Add">
+                </label>
+                <label>
+                    <input type="reset" value="Clear all">
+                </label>
             </div>
         </form>
     </div>
@@ -65,7 +64,7 @@
         <ul class="footer-links-main">
             <li><a href="index.html">Home</a></li>
             <li><a href="#">Trending</a></li>
-            <li><a href="Newest.php">Newest</a></li>
+            <li><a href="Books.php">Newest</a></li>
             <li><a href="#">Search</a></li>
             <li><a href="#">About us</a></li>
         </ul>

@@ -14,7 +14,7 @@
     <nav>
         <ul>
             <li><a href="Trending.html">Trending</a></li>
-            <li><a href="Newest.php">Newest</a></li>
+            <li><a href="Books.php">Newest</a></li>
             <li><a href="Search.html">Search</a></li>
             <li><a href="about.html">About us</a></li>
         </ul>
@@ -25,7 +25,7 @@
 <main>
     <section class="posts-links">
         <div class="wrapper">
-            <h2>Newest Posts</h2>
+            <h2>Books</h2>
 
                     <?php
                         require('./connect.php');
@@ -34,7 +34,7 @@
                         $result = $con->query($sql);
 
                         while($row = mysqli_fetch_array($result)){
-                            echo "<a href='post1.html'>";
+                            echo "<a href='bookDetails.php?ID={$row['id_ksiazki']}'>";
                             echo "  <div class='posts-link'>";
                             echo "<p>".$row['tytul']."</p>";
                             echo "  </div>";
@@ -51,7 +51,7 @@
         <ul class="footer-links-main">
             <li><a href="index.html">Home</a></li>
             <li><a href="#">Trending</a></li>
-            <li><a href="Newest.php">Newest</a></li>
+            <li><a href="Books.php">Newest</a></li>
             <li><a href="#">Search</a></li>
             <li><a href="#">About us</a></li>
         </ul>
