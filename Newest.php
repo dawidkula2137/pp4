@@ -14,11 +14,11 @@
     <nav>
         <ul>
             <li><a href="Trending.html">Trending</a></li>
-            <li><a href="Newest.html">Newest</a></li>
+            <li><a href="Newest.php">Newest</a></li>
             <li><a href="Search.html">Search</a></li>
             <li><a href="about.html">About us</a></li>
         </ul>
-        <a class="header-newest" href="addBook.html">Add Book</a>
+        <a class="header-newest" href="addBook.php">Add Book</a>
         <a class="header-newest" href="addReview.html">Add Review</a>
     </nav>
 </header>
@@ -26,39 +26,28 @@
     <section class="posts-links">
         <div class="wrapper">
             <h2>Newest Posts</h2>
-            <a href="post1.html">
-                <div class="posts-link">
-                    <p>Post1</p>
-                </div>
-            </a><a href="post1.html">
-            <div class="posts-link">
-                <p>Post2</p>
-            </div>
-        </a><a href="post1.html">
-            <div class="posts-link">
-                <p>Post3</p>
-            </div>
-        </a><a href="post1.html">
-            <div class="posts-link">
-                <p>Post4</p>
-            </div>
-        </a><a href="post1.html">
-            <div class="posts-link">
-                <p>Post5</p>
-            </div>
-        </a><a href="post1.html">
-            <div class="posts-link">
-                <p>Post6</p>
-            </div>
-        </a><a href="post1.html">
-            <div class="posts-link">
-                <p>Post7</p>
-            </div>
-        </a><a href="post1.html">
-            <div class="posts-link">
-                <p>Post8</p>
-            </div>
-        </a>
+
+                    <?php
+
+                        $db_host = "localhost";
+                        $db_user = 'root';
+                        $db_pass = "";
+                        $db_name = "id13880151_projektpp4";
+                        $con = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+
+                        $sql = "SELECT * FROM ksiazka";
+                        $result = $con->query($sql);
+
+                        while($row = mysqli_fetch_array($result)){
+                            echo "<a href='post1.html'>";
+                            echo "  <div class='posts-link'>";
+                            echo "<p>".$row['tytul']."</p>";
+                            echo "  </div>";
+                            echo "</a>";
+                        }
+
+                    ?>
+
         </div>
     </section>
 </main>
@@ -67,7 +56,7 @@
         <ul class="footer-links-main">
             <li><a href="index.html">Home</a></li>
             <li><a href="#">Trending</a></li>
-            <li><a href="Newest.html">Newest</a></li>
+            <li><a href="Newest.php">Newest</a></li>
             <li><a href="#">Search</a></li>
             <li><a href="#">About us</a></li>
         </ul>

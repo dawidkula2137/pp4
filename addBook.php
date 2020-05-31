@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>e-Books</title>
+    <title>Add Book</title>
     <meta content="width=device-width, initial-scale=1.0" name=viewport">
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap"
           rel="stylesheet">
@@ -23,7 +23,46 @@
     </nav>
 </header>
 <main>
+    <div class="wrapper">
+        <form action="dbBookAdd.php" method="post">
+            <div>
+            <label>
+                <input name="title" type="text" placeholder="tytuł">
+            </label>
+            <label>
+                 <input name="author" type="text" placeholder="autor">
+            </label>
+            <label>
+                <select name="genre">
 
+                    <?php
+                    $db_host = "localhost";
+                    $db_user = 'root';
+                    $db_pass = "";
+                    $db_name = "id13880151_projektpp4";
+                    $con = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+
+                    $sql = "SELECT nazwa FROM gatunki";
+                    $result = $con->query($sql);
+
+                    while($row = mysqli_fetch_array($result)){
+                        $wynik = $row['nazwa'];
+                        echo "<option value='$wynik'>".$row['nazwa']."</option>";
+                    }
+
+                    ?>
+                </select>
+            </label>
+            <label>
+                <input type="submit" value="Add">
+            </label>
+            <label>
+                <input type="reset" value="Clear all">
+            </label>
+            </div>
+        </form>
+    </div>
+</main>
 <div class="wrapper">
     <footer>
         <ul class="footer-links-main">
