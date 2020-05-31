@@ -1,4 +1,3 @@
-
 <?php
 if(isset($_GET['ID'])){
     require("connect.php");
@@ -28,7 +27,7 @@ if(isset($_GET['ID'])){
     <a class="header-brand" href="index.html">e-Books</a>
     <nav>
         <ul>
-            <li><a href="Trending.html">Trending</a></li>
+            <li><a href="Trending.php">Trending</a></li>
             <li><a href="Books.php">Books</a></li>
             <li><a href="Search.html">Search</a></li>
             <li><a href="aboutUs.html">About us</a></li>
@@ -41,10 +40,19 @@ if(isset($_GET['ID'])){
     <div class="wrapper">
         <h1><?php echo $row['tytul'] ?></h1>
 
-        <form action="dbReviewAdd.php" method="post">
+        <?php
+        echo "<form action='dbReviewAdd.php?ID={$ID}' method='post'>"
+        ?>
             <textarea name="content" rows="5" cols="40"></textarea>
             <input type="text" name="rauthor">
-            <input type="button" value="dodaj post">
+            <input type="submit" value="dodaj post">
+            <select name="mark">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
         </form>
     </div>
 </main>

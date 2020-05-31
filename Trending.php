@@ -40,25 +40,26 @@
     <section class="posts-links">
         <div class="wrapper">
             <h2>Books</h2>
-                    <hover4>
-                    <?php
-                        require('./connect.php');
 
-                        $sql = "SELECT * FROM ksiazka";
-                        $result = $con->query($sql);
+                <?php
+                require('./connect.php');
 
-                        while($row = mysqli_fetch_array($result)){
+                $sql = "select ksiazka.id_ksiazki, ksiazka.tytul, (SELECT AVG(recenzja.ocena) 
+                        from recenzja where recenzja.id_ksiazki = ksiazka.id_ksiazki) AS AvgScore FROM ksiazka ORDER BY AvgScore DESC ";
+                $result = $con->query($sql);
 
-                            echo "<a href='bookDetails.php?ID={$row['id_ksiazki']}'>";
-                            echo "  <div class='posts-link'>";
-                            echo "<p>".$row['tytul']."</p>";
-                            echo "  </div>";
-                            echo "</a>";
+                while($row = mysqli_fetch_array($result)){
 
-                        }
+                    echo "<a href='bookDetails.php?ID={$row['id_ksiazki']}'>";
+                    echo "  <div class='posts-link'>";
+                    echo "<p>".$row['tytul']."</p>";
+                    echo "  </div>";
+                    echo "</a>";
 
-                    ?>
-                    </hover4>
+                }
+
+                ?>
+
         </div>
     </section>
 </main>

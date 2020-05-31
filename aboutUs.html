@@ -13,7 +13,7 @@
     <a class="header-brand" href="index.html">e-Books</a>
     <nav>
         <ul>
-            <li><a href="Trending.html">Trending</a></li>
+            <li><a href="Trending.php">Trending</a></li>
             <li><a href="Books.php">Books</a></li>
             <li><a href="Search.html">Search</a></li>
             <li><a href="aboutUs.html">About us</a></li>

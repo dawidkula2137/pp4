@@ -7,6 +7,9 @@ if(isset($_GET['ID'])){
     $result = $con->query($sql);
     $row = mysqli_fetch_array($result);
 
+    $sql2 = "SELECT * FROM recenzja WHERE id_ksiazki = '$ID'";
+    $result2 = $con->query($sql2);
+
 }
 
 ?>
@@ -27,7 +30,7 @@ if(isset($_GET['ID'])){
     <a class="header-brand" href="index.html">e-Books</a>
     <nav>
         <ul>
-            <li><a href="Trending.html">Trending</a></li>
+            <li><a href="Trending.php">Trending</a></li>
             <li><a href="Books.php">Books</a></li>
             <li><a href="Search.html">Search</a></li>
             <li><a href="aboutUs.html">About us</a></li>
@@ -40,9 +43,11 @@ if(isset($_GET['ID'])){
     <div class="wrapper">
         <h1><?php echo $row['tytul'] ?></h1>
         <h1><?php echo $row['autor'] ?></h1>
-        <form action="addReview.php" method="post">
-            <input type="button" value="dodaj post">
-        </form>
+        <h5><?php
+            while($row2 = mysqli_fetch_array($result2)){
+                echo $row2['tresc']."</br>";
+            }
+            ?></h5>
     </div>
 </main>
 <div class="wrapper">
