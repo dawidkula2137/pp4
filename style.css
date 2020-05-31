@@ -48,7 +48,7 @@ header nav ul li a{
     text-transform: uppercase;
 }
 
-header .header-newest {
+header .header-Books {
     display: none;
 }
 
@@ -69,7 +69,7 @@ header .header-newest {
     header nav ul li a{
         line-height: 60px;
     }
-    header .header-newest {
+    header .header-Books {
         display: block;
         font-family: Catamaran, sans-serif;
         font-size: 16px;
@@ -243,13 +243,13 @@ footer ul li a {
     line-height: 40px;
 }
 
-.footer-links-newest {
+.footer-links-Books {
     display: none;
 }
 
 @media only screen and (min-width: 1000px) {
 
-    .footer-links-newest {
+    .footer-links-Books {
         display: block;
     }
 

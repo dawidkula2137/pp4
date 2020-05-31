@@ -28,19 +28,19 @@ if(isset($_GET['ID'])){
     <nav>
         <ul>
             <li><a href="Trending.html">Trending</a></li>
-            <li><a href="Books.php">Newest</a></li>
+            <li><a href="Books.php">Books</a></li>
             <li><a href="Search.html">Search</a></li>
             <li><a href="aboutUs.html">About us</a></li>
         </ul>
-        <a class="header-newest" href="addBook.php">Add Book</a>
-        <a class="header-newest" href="addReview.html">Add Review</a>
+        <a class="header-Books" href="addBook.php">Add Book</a>
+        <a class="header-Books" href="addReview.php">Add Review</a>
     </nav>
 </header>
 <main>
     <div class="wrapper">
         <h1><?php echo $row['tytul'] ?></h1>
         <h1><?php echo $row['autor'] ?></h1>
-        <form action="addReview.html" method="post">
+        <form action="addReview.php" method="post">
             <input type="button" value="dodaj post">
         </form>
     </div>
@@ -50,12 +50,12 @@ if(isset($_GET['ID'])){
         <ul class="footer-links-main">
             <li><a href="index.html">Home</a></li>
             <li><a href="#">Trending</a></li>
-            <li><a href="Books.php">Newest</a></li>
+            <li><a href="Books.php">Books</a></li>
             <li><a href="#">Search</a></li>
             <li><a href="#">About us</a></li>
         </ul>
-        <ul class="footer-links-newest">
-            <li><a><p>Newest Reviews</p></a></li>
+        <ul class="footer-links-Books">
+            <li><a><p>Books Reviews</p></a></li>
             <li><a href="#"></a></li>
             <li><a href="#"></a></li>
             <li><a href="#"></a></li>

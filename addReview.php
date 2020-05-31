@@ -23,42 +23,28 @@
     </nav>
 </header>
 <main>
-    <section class="index-banner">
-    <div class="vertical-center">
-        <h2>ZNAJDŹ IDEALNĄ KSIĄŻKĘ</h2>
-<!--        <h1>Oceniaj, Udostepniaj, Dyskutuj, Dodawaj - Zostań Krytykiem Książek! </br> Bez Logowania - Na Każdym
-            Urządzeniu!</h1>-->
-    </div>
-</section>
+    <section class="posts-links">
         <div class="wrapper">
-    <section class="index-boxes">
-        <a href="#">
-            <div class="index-box-square">
-                <h3>Trending</h3>
-            </div>
-        </a>
-        <a href="Books.php">
-            <div class="index-box-rectangle">
-                <h3>Books</h3>
-            </div>
-        </a>
-        <a href="#">
-            <div class="index-box-square">
-                <h3>Search</h3>
-            </div>
-        </a>
-        <a href="addBook.php">
-            <div class="index-box-rectangle">
-                <h3>Add Book</h3>
-            </div>
-        </a>
-        <a href="#">
-            <div class="index-box-rectangle">
-                <h3>Add Review</h3>
-            </div>
-        </a>
-    </section>
+            <h2>Books</h2>
+
+            <?php
+            require('./connect.php');
+
+            $sql = "SELECT * FROM ksiazka";
+            $result = $con->query($sql);
+
+            while($row = mysqli_fetch_array($result)){
+                echo "<a href='addReviewDetails.php?ID={$row['id_ksiazki']}'>";
+                echo "  <div class='posts-link'>";
+                echo "<p>".$row['tytul']."</p>";
+                echo "  </div>";
+                echo "</a>";
+            }
+
+            ?>
+
         </div>
+    </section>
 </main>
 <div class="wrapper">
     <footer>

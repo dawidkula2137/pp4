@@ -1,8 +1,23 @@
+
+<?php
+if(isset($_GET['ID'])){
+    require("connect.php");
+    $ID = mysqli_real_escape_string($con, $_GET['ID']);
+
+    $sql = "SELECT * FROM ksiazka WHERE id_ksiazki = '$ID'";
+    $result = $con->query($sql);
+    $row = mysqli_fetch_array($result);
+
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add Review</title>
+    <title>e-Books</title>
     <meta content="width=device-width, initial-scale=1.0" name=viewport">
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap"
           rel="stylesheet">
@@ -14,40 +29,22 @@
     <nav>
         <ul>
             <li><a href="Trending.html">Trending</a></li>
-            <li><a href="Books.php">Newest</a></li>
+            <li><a href="Books.php">Books</a></li>
             <li><a href="Search.html">Search</a></li>
             <li><a href="aboutUs.html">About us</a></li>
         </ul>
-        <a class="header-newest" href="addBook.php">Add Book</a>
-        <a class="header-newest" href="addReview.html">Add Review</a>
+        <a class="header-Books" href="addBook.php">Add Book</a>
+        <a class="header-Books" href="addReview.php">Add Review</a>
     </nav>
 </header>
 <main>
     <div class="wrapper">
+        <h1><?php echo $row['tytul'] ?></h1>
+
         <form action="dbReviewAdd.php" method="post">
-            <div>
-                <label>
-                    <textarea cols="50" rows="4" name="content"></textarea>
-                </label>
-                <label>
-                    <input name="rauthor" type="text" placeholder="rautor">
-                </label>
-                <label>
-                    <select name="score">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </label>
-                <label>
-                    <input type="submit" value="Add">
-                </label>
-                <label>
-                    <input type="reset" value="Clear all">
-                </label>
-            </div>
+            <textarea name="content" rows="5" cols="40"></textarea>
+            <input type="text" name="rauthor">
+            <input type="button" value="dodaj post">
         </form>
     </div>
 </main>
@@ -56,12 +53,12 @@
         <ul class="footer-links-main">
             <li><a href="index.html">Home</a></li>
             <li><a href="#">Trending</a></li>
-            <li><a href="Books.php">Newest</a></li>
+            <li><a href="Books.php">Books</a></li>
             <li><a href="#">Search</a></li>
             <li><a href="#">About us</a></li>
         </ul>
-        <ul class="footer-links-newest">
-            <li><a><p>Newest Reviews</p></a></li>
+        <ul class="footer-links-Books">
+            <li><a><p>Books Reviews</p></a></li>
             <li><a href="#"></a></li>
             <li><a href="#"></a></li>
             <li><a href="#"></a></li>
