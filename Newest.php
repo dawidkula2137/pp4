@@ -28,12 +28,7 @@
             <h2>Newest Posts</h2>
 
                     <?php
-
-                        $db_host = "localhost";
-                        $db_user = 'root';
-                        $db_pass = "";
-                        $db_name = "id13880151_projektpp4";
-                        $con = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+                        require('./connect.php');
 
                         $sql = "SELECT * FROM ksiazka";
                         $result = $con->query($sql);
