@@ -39,26 +39,50 @@
 <main>
     <section class="posts-links">
         <div class="wrapper">
-            <h2>Books</h2>
-                    <hover4>
-                    <?php
-                        require('./connect.php');
+            <h2>Search for book</h2>
+            <input type="text" value="" autocomplete="off"
+                   name="searchBar" id="searchBar" placeholder="Search for book"
+                   class="searchWrapper" onkeyup="searchFunction()"/>
+            <script>
+                function searchFunction(){
+                    var input,filter,ul,li,p,i;
+                    input = document.getElementById("searchBar");
+                    filter =input.value.toUpperCase();
+                    ul = document.getElementById("list");
+                    li = ul.getElementsByTagName("li");
 
-                        $sql = "SELECT * FROM ksiazka";
-                        $result = $con->query($sql);
-
-                        while($row = mysqli_fetch_array($result)){
-
-                            echo "<a href='bookDetails.php?ID={$row['id_ksiazki']}'>";
-                            echo "  <div class='posts-link'>";
-                            echo "<p>".$row['tytul']."</p>";
-                            echo "  </div>";
-                            echo "</a>";
-
+                    for(i=0; i< li.length; i++){
+                        p = li[i].getElementsByTagName('p')[0];
+                        if(p.innerHTML.toUpperCase().indexOf(filter) > -1){
+                            li[i].style.display = "";
+                        }else{
+                            li[i].style.display = "none";
                         }
+                    }
+                }
+            </script>
+            <hover4>
+                <ul id="list" class="wrapper">
+                <?php
 
-                    ?>
-                    </hover4>
+                require('./connect.php');
+
+                $sql = "SELECT * FROM ksiazka";
+                $result = $con->query($sql);
+
+                while($row = mysqli_fetch_array($result)){
+                    echo "<li>";
+                    echo "<a href='bookDetails.php?ID={$row['id_ksiazki']}'>";
+                    echo "  <div class='posts-link'>";
+                    echo "<p id='title'>".$row['tytul']."</p>";
+                    echo "  </div>";
+                    echo "</a>";
+                    echo "</li>";
+
+                }
+                ?>
+                </ul>
+            </hover4>
         </div>
     </section>
 </main>
@@ -69,7 +93,7 @@
             <li><a href="Trending.php">Trending</a></li>
             <li><a href="Books.php">Books</a></li>
             <li><a href="Search.php">Search</a></li>
-            <li><a href="aboutUs.html">About us</a></li>
+            <li><a href="#">About us</a></li>
         </ul>
         <ul class="footer-links-Books">
             <li><a><p>Books Reviews</p></a></li>

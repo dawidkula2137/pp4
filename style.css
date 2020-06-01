@@ -150,6 +150,7 @@ header .header-Books {
     .wrapper {
         width: 1000px;
         margin: 0 auto;
+        list-style-type:none;
     }
 
     .index-banner {
@@ -185,8 +186,14 @@ header .header-Books {
     .index-boxes div h3 {
         line-height: 185px;
     }
+
+    .searchWrapper{
+        margin-left: 450px;
+
+    }
 }
 /*POSTS*/
+
 
 .posts-links {
     overflow: hidden;
